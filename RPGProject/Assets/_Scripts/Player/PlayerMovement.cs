@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     Rigidbody rigid;
 
     public float[] moveSpeedBase;
@@ -15,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoveRight;
     public bool isMoveUp;
     public bool isMoveDown;
+
+    public bool _isAvailable = true;
 
     void Awake()
     {
@@ -45,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
 
     void moving()
     {
+        if(!_isAvailable) { return; }
+
         /////// Move Vertically /////////
         if (Input.GetKey(KeyCode.W))
         {
@@ -112,5 +115,10 @@ public class PlayerMovement : MonoBehaviour
     public void stopMoving()
     {
         rigid.AddForce(Vector3.zero);
+    }
+
+    public void _SetAvailablity(bool _state)
+    {
+        _isAvailable = _state;
     }
 }
