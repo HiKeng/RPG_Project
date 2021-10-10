@@ -10,12 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float[] maxSpeed;
 
-    public bool isMoveLeft;
-    public bool isMoveRight;
-    public bool isMoveUp;
-    public bool isMoveDown;
+    [HideInInspector] public bool isMoveLeft;
+    [HideInInspector] public bool isMoveRight;
+    [HideInInspector] public bool isMoveUp;
+    [HideInInspector] public bool isMoveDown;
 
-    public bool _isAvailable = true;
+    [HideInInspector] public bool _isAvailable = true;
 
     void Awake()
     {
