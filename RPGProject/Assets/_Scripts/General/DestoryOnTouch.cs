@@ -13,7 +13,8 @@ public class DestoryOnTouch : MonoBehaviour
         {
             //_collectedSFX.Play();
 
-            GameObject _newSFX = Instantiate(new GameObject(), transform.position, transform.rotation);
+            //GameObject _newSFX = Instantiate(new GameObject(), transform.position, transform.rotation);
+            GameObject _newSFX = new GameObject();
 
             _newSFX.AddComponent<AudioSource>();
             _newSFX.GetComponent<AudioSource>().clip = _collectedSFX.clip;
