@@ -14,13 +14,13 @@ public class PlayerMap : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Space))
         {
             _mapUI.gameObject.SetActive(true);
             _onOpenMap.Invoke();
         }
 
-        if (Input.GetKeyUp(KeyCode.Tab))
+        if (Input.GetKeyUp(KeyCode.Tab) || Input.GetKeyUp(KeyCode.Space))
         {
             _mapUI.gameObject.SetActive(false);
             _onCloseMap.Invoke();

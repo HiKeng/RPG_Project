@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: MapIconDown
+    uniqueID: 2416839927
+    locked: 0
+  - name: Fog
+    uniqueID: 2605066961
+    locked: 0
+  - name: MapIconTop
+    uniqueID: 1211239983
+    locked: 0
