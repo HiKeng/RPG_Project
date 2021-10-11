@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] AudioSource _footStepSFX;
+
     Rigidbody rigid;
 
     public float[] moveSpeedBase;
@@ -16,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isMoveDown;
 
     [HideInInspector] public bool _isAvailable = true;
+
+
+    [Header("Events")]
+    [SerializeField] UnityEvent _onStartMove;
+    [SerializeField] UnityEvent _onEndMove;
 
     void Awake()
     {
@@ -47,6 +55,24 @@ public class PlayerMovement : MonoBehaviour
     void moving()
     {
         if(!_isAvailable) { return; }
+
+
+        //if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        //{
+        //    _onStartMove.Invoke();
+        //}
+
+        if (isMoveUp || isMoveDown || isMoveLeft || isMoveRight)
+        {
+            if(!_footStepSFX.isPlaying)
+            {
+                _onStartMove.Invoke();
+            }
+        }
+        else
+        {
+            _onEndMove.Invoke();
+        }
 
         /////// Move Vertically /////////
         if (Input.GetKey(KeyCode.W))
