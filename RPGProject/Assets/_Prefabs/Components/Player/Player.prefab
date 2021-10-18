@@ -176,10 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _staminaUI: {fileID: 524550492768899174}
   _maxStaminaAmount: 5
-  _currentStaminaAmount: 5
-  _staminaPerPoint: 30
-  _currentStamina: 30
-  _consumeSpeed: 1
+  _staminaPerPoint: 15
+  _consumeSpeed: 1.75
 --- !u!1 &2440630430564397922
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +215,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 647.3689, y: 940.1038}
+  m_SizeDelta: {x: 797.1611, y: 940.1038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2440630430564397935
 CanvasRenderer:

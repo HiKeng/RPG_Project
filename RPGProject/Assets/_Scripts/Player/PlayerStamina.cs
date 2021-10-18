@@ -22,8 +22,7 @@ public class PlayerStamina : MonoBehaviour
 
     void Start()
     {
-        _resetCurrentStaminaPoint();
-        _ResetCurrentStaminaAmountLeft();
+        _ReplenishStamina();
     }
 
     void Update()
@@ -37,13 +36,23 @@ public class PlayerStamina : MonoBehaviour
         {
             _updateStaminaAmount();
         }
+
+       if(_currentStaminaAmount > _maxStaminaAmount)
+        {
+            _currentStaminaAmount = _maxStaminaAmount;
+            _updateStaminaUI();
+        }
     }
 
     private void _updateStaminaAmount()
     {
         _currentStaminaAmount--;
         _resetCurrentStaminaPoint();
+        _updateStaminaUI();
+    }
 
+    void _updateStaminaUI()
+    {
         _staminaUI.text = $"Stamina : {_currentStaminaAmount} / {_maxStaminaAmount}";
     }
 
@@ -52,8 +61,16 @@ public class PlayerStamina : MonoBehaviour
         _currentStamina = _staminaPerPoint;
     }
 
-    public void _ResetCurrentStaminaAmountLeft()
+    public void _ReplenishStamina()
     {
         _currentStaminaAmount = _maxStaminaAmount;
+        _currentStamina = _staminaPerPoint;
+        _updateStaminaUI();
+    }
+
+    public void _RecoverStamina(int _amountToRecover)
+    {
+        _currentStaminaAmount += _amountToRecover;
+        _updateStaminaUI();
     }
 }
