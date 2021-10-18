@@ -36,9 +36,16 @@ public class PlayerStamina : MonoBehaviour
 
        if(_currentStamina <= 0 && _currentStaminaAmount > 0)
         {
-            _currentStaminaAmount--;
-            _resetCurrentStaminaPoint();
+            _updateStaminaAmount();
         }
+    }
+
+    private void _updateStaminaAmount()
+    {
+        _currentStaminaAmount--;
+        _resetCurrentStaminaPoint();
+
+        _staminaUI.text = $"Stamina : {_currentStaminaAmount} / {_maxStaminaAmount}";
     }
 
     void _resetCurrentStaminaPoint()
