@@ -175,9 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staminaUI: {fileID: 524550492768899174}
-  _maxStaminaAmount: 5
-  _staminaPerPoint: 15
-  _consumeSpeed: 1.75
+  _maxStaminaAmount: 13
+  _staminaPerPoint: 7
+  _consumeSpeed: 2
 --- !u!1 &2440630430564397922
 GameObject:
   m_ObjectHideFlags: 0
