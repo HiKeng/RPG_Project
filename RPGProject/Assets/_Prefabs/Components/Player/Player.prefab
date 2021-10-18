@@ -174,12 +174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7421fb56a1869488ee4a64f0126383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staminaUI: {fileID: 524550492768899174}
   _maxStaminaAmount: 5
   _currentStaminaAmount: 5
   _staminaPerPoint: 30
-  _currentStamina: 0
+  _currentStamina: 30
   _consumeSpeed: 1
-  _staminaUI: {fileID: 524550492768899174}
 --- !u!1 &2440630430564397922
 GameObject:
   m_ObjectHideFlags: 0

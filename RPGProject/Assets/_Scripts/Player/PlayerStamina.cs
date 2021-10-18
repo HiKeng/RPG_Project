@@ -12,11 +12,10 @@ public class PlayerStamina : MonoBehaviour
 
     [Header("Parameter")]
     [SerializeField] int _maxStaminaAmount = 5;
-    [SerializeField] int _currentStaminaAmount = 5;
+    int _currentStaminaAmount = 5;
 
     [SerializeField] float _staminaPerPoint = 30f;
-
-    [SerializeField] float _currentStamina;
+    float _currentStamina;
 
     [SerializeField] float _consumeSpeed = 1f;
 
