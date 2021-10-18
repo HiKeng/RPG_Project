@@ -147,4 +147,16 @@ public class PlayerMovement : MonoBehaviour
     {
         _isAvailable = _state;
     }
+
+    public bool _IsMoving()
+    {
+        bool _isMove = false;
+
+        if(isMoveUp || isMoveDown || isMoveRight || isMoveLeft)
+        {
+            _isMove = true;
+        }
+
+        return _isMove;
+    }
 }
