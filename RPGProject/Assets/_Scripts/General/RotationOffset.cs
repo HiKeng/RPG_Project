@@ -7,18 +7,23 @@ public class RotationOffset : MonoBehaviour
     [SerializeField] bool _targetThisObject = true;
     [SerializeField] Vector3 _rotationOffset = new Vector3();
 
-
+    [SerializeField] List<Transform> _targetList = new List<Transform>();
 
     void Start()
     {
-        
+        if (_targetThisObject)
+        {
+            _RotateObject(transform);
+        }
+
+        for (int i = 0; i < _targetList.Count; i++)
+        {
+            _RotateObject(_targetList[i]);
+        }
     }
 
-    void Update()
+    public void _RotateObject(Transform _objectToRotate)
     {
-        if(_targetThisObject)
-        {
-            transform.rotation = Quaternion.Euler(_rotationOffset);
-        }
+        _objectToRotate.rotation = Quaternion.Euler(_rotationOffset);
     }
 }
