@@ -11,10 +11,18 @@ public class UnitHealth : MonoBehaviour
     public virtual void _TakeDamage(float _damageAmount)
     {
         _currentHealth -= _damageAmount;
+
+        if(_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+            _Dead();
+        }
     }
 
     public virtual void _Dead()
     {
+        Debug.Log(name + " is dead");
 
+        Destroy(gameObject);
     }
 }

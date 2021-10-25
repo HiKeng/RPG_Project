@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2440630430333776815}
   - component: {fileID: 2440630430333776802}
   - component: {fileID: 2440630430333776814}
+  - component: {fileID: 1847445540564832863}
   - component: {fileID: 2440630430333776813}
   - component: {fileID: 2440630430333776801}
   - component: {fileID: 956099077916273229}
@@ -70,6 +71,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &1847445540564832863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440630430333776803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eb7cbe37fc127468b5c3249ce18da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
 --- !u!114 &2440630430333776813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,10 +249,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 2440630432034028772}
+  _mouseCursor: {fileID: 2137136579822004448}
   _layerMask:
     serializedVersion: 2
     m_Bits: 8192
-  _mouseCursor: {fileID: 2137136579822004448}
 --- !u!1 &2440630430564397922
 GameObject:
   m_ObjectHideFlags: 0
