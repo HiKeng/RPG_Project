@@ -18,11 +18,15 @@ public class MousePosition : MonoBehaviour
 
     void _castRay()
     {
+        _mouseCursor.gameObject.SetActive(_isDetected);
+        Cursor.visible = !_isDetected;
+
         Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, _layerMask))
         {
             _isDetected = true;
             _mouseCursor.position = raycastHit.point;
+            _mouseCursor.rotation = Quaternion.Euler(raycastHit.normal);
         }
         else
         {
