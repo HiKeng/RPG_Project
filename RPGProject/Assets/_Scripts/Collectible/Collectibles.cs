@@ -13,7 +13,12 @@ public class Collectibles : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerMovement>() != null)
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.GetComponent<PlayerMovement>() != null)
         {
             GameObject _newSFX = new GameObject();
 
@@ -24,9 +29,9 @@ public class Collectibles : MonoBehaviour
 
             gameObject.SetActive(false);
 
-            if(other.GetComponent<PlayerStamina>() != null)
+            if (other.gameObject.GetComponent<PlayerStamina>() != null)
             {
-                other.GetComponent<PlayerStamina>()._RecoverStamina(_staminaRecoverAmount);
+                other.gameObject.GetComponent<PlayerStamina>()._RecoverStamina(_staminaRecoverAmount);
             }
         }
     }
