@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CapsuleCollider))]
 public class UnitHealth : MonoBehaviour
 {
-    public float _maxHealth;
+    public float _maxHealth = 20f;
     
-    float _currentHealth;
+    public float _currentHealth;
 
     [Header("Events")]
-    [SerializeField] UnityEvent _onStart;
-    [SerializeField] UnityEvent _onTakeDamage;
-    [SerializeField] UnityEvent _onDead;
+    [SerializeField] public UnityEvent _onStart;
+    [SerializeField] public UnityEvent _onTakeDamage;
+    [SerializeField] public UnityEvent _onReplenishHealth;
+    [SerializeField] public UnityEvent _onDead;
 
     public virtual void Start()
     {
@@ -39,5 +42,11 @@ public class UnitHealth : MonoBehaviour
         Debug.Log(name + " is dead");
         _onDead.Invoke();
         gameObject.SetActive(false);
+    }
+
+    public virtual void _ReplenishHealth()
+    {
+        _currentHealth = _maxHealth;
+        _onReplenishHealth.Invoke();
     }
 }

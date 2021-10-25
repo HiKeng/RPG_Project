@@ -42,6 +42,8 @@ public class PlayerStamina : MonoBehaviour
             _currentStaminaAmount = _maxStaminaAmount;
             _updateStaminaUI();
         }
+
+        _checkStaminaAmountLeft();
     }
 
     private void _updateStaminaAmount()
@@ -73,4 +75,29 @@ public class PlayerStamina : MonoBehaviour
         _currentStaminaAmount += _amountToRecover;
         _updateStaminaUI();
     }
+
+    public void _ReduceStaminaAmount(int _amountToReduce)
+    {
+        _currentStaminaAmount -= _amountToReduce;
+        _updateStaminaUI();
+    }
+
+    public void _ReduceStamina(float _amountToReduce)
+    {
+        _currentStamina -= _amountToReduce;
+        _updateStaminaUI();
+    }
+
+    public float _GetCurrentStamina()
+    {
+        return _currentStaminaAmount;
+    }
+
+    void _checkStaminaAmountLeft()
+    {
+        if(_currentStaminaAmount > 0) { return; }
+
+        gameObject.SetActive(false);
+    }
+
 }

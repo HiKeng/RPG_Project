@@ -83,7 +83,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eb7cbe37fc127468b5c3249ce18da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 20
+  _currentHealth: 0
+  _onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _onReplenishHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 956099077916273229}
+        m_TargetAssemblyTypeName: PlayerStamina, Assembly-CSharp
+        m_MethodName: _ReduceStaminaAmount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onDead:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2440630430333776813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +233,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPrefab: {fileID: 7188280196858072946, guid: 61ad6c2fe24e69e41bacbbfd46e92580, type: 3}
-  _spawnPosition: {fileID: 2412111003901510040}
+  _onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 956099077916273229}
+        m_TargetAssemblyTypeName: PlayerStamina, Assembly-CSharp
+        m_MethodName: _ReduceStamina
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7740478980284347486
 MonoBehaviour:
   m_ObjectHideFlags: 0
