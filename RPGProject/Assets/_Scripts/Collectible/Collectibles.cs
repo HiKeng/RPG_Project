@@ -11,11 +11,6 @@ public class Collectibles : MonoBehaviour
 
     [SerializeField] AudioSource _collectedSFX;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.GetComponent<PlayerMovement>() != null)
