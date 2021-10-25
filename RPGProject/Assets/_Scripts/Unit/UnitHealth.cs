@@ -8,6 +8,11 @@ public class UnitHealth : MonoBehaviour
     
     float _currentHealth;
 
+    public virtual void Start()
+    {
+        _currentHealth = _maxHealth;
+    }
+
     public virtual void _TakeDamage(float _damageAmount)
     {
         _currentHealth -= _damageAmount;
