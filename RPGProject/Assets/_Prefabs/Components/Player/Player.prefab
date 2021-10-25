@@ -236,6 +236,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7740478980284347486}
+        m_TargetAssemblyTypeName: RemoveParent, Assembly-CSharp
+        m_MethodName: _RemoveParentOnTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2440630432034028771}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3991099544366411464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,6 +1137,7 @@ GameObject:
   - component: {fileID: 2440630432034028772}
   - component: {fileID: 2440630432034028773}
   - component: {fileID: 2440630432034028770}
+  - component: {fileID: 6127461924607297357}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1257,6 +1270,20 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &6127461924607297357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440630432034028774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1880db5c0defde4ba497edb29c02862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetToFollow: {fileID: 2440630430333776815}
+  _isFollow: 1
 --- !u!1 &2440630432095190364
 GameObject:
   m_ObjectHideFlags: 0

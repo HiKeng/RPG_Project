@@ -22,7 +22,6 @@ public class UnitHealth : MonoBehaviour
     public virtual void _Dead()
     {
         Debug.Log(name + " is dead");
-
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
