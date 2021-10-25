@@ -2,32 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MousePosition))]
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] GameObject _attackPrefab;
     [SerializeField] Transform _spawnPosition;
 
+    MousePosition _mousePosition;
+
+    private void Awake()
+    {
+        _mousePosition = GetComponent<MousePosition>();
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && _mousePosition._GetIsDectected())
         {
-            //Vector3 mousePos = Input.mousePosition;
-            //mousePos.z = 2.0f;
-            //Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            //Debug.Log(objectPos);
-
-            //Instantiate(_attackPrefab, objectPos, Quaternion.identity);
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                Instantiate(_attackPrefab, hit.point, Quaternion.identity);
-            }
-
-            //GameObject _newBullet = Instantiate(_attackPrefab, _spawnPosition.position, Quaternion.identity);
+            _castSpell();
         }
+    }
+
+    void _castSpell()
+    {
+        Debug.Log("Cast Spell");
+
+        Instantiate(_attackPrefab, _mousePosition._GetMousePosition(), Quaternion.identity);
     }
 }
