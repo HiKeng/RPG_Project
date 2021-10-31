@@ -7,34 +7,45 @@ using UnityEngine.UI;
 [RequireComponent(typeof(PlayerStamina))]
 public class FoodResource : MonoBehaviour
 {
-    [Header("UI")]
-    [SerializeField] Slider _slider;
-
-    [Header("Parameter")]
+    #region Variables
+    [Header("Resource Amount")]
     [SerializeField] float _maxAmount = 5;
     float _currentAmount = 5f;
 
+    [Header("Consumption Speed")]
     [SerializeField] float _idleConsumeSpeed = 0.2f;
     [SerializeField] float _MoveConsumeSpeed = 0.5f;
     float _currentConsumeSpeed;
+
+    [Header("Stamina Consumption")]
+    [SerializeField] float _consumeStaminaInterval = 1f;
+    [SerializeField] float _consumeStaminaSpeedMultiplier = 0.3f;
+    float _currentStaminaInterval;
+
+    [Header("References")]
+    [SerializeField] Slider _slider;
+    #endregion
+
+    #region Methods
 
     void Start()
     {
         _ReplenishResource();
 
         _currentConsumeSpeed = _idleConsumeSpeed;
+        _currentStaminaInterval = _consumeStaminaInterval;
     }
 
     void Update()
     {
-        _reduceResourceOverTime();
-
         if(_currentAmount > 0)
         {
+            _reduceResourceOverTime();
             _currentConsumeSpeed = _GetCurrentConsumeSpeedCondition();
         }
 
-        _slider.value = _currentAmount / _maxAmount;
+        _updateSliderUI();
+        _consumeStaminaOnRunningOut();
     }
 
     float _GetCurrentConsumeSpeedCondition()
@@ -62,4 +73,26 @@ public class FoodResource : MonoBehaviour
     {
         _currentAmount = _maxAmount;
     }
+
+    void _consumeStaminaOnRunningOut()
+    {
+        if(_currentAmount > 0) { return; }
+
+        if(_currentStaminaInterval > 0)
+        {
+            _currentStaminaInterval -= Time.deltaTime * _consumeStaminaSpeedMultiplier;
+        }
+        else
+        {
+            GetComponent<PlayerStamina>()._ReduceStaminaAmount(1);
+            _currentStaminaInterval = _consumeStaminaInterval;
+        }
+    }
+
+    void _updateSliderUI()
+    {
+        _slider.value = _currentAmount / _maxAmount;
+    }
+
+    #endregion
 }

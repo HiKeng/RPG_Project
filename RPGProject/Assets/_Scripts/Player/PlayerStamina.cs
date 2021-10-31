@@ -78,6 +78,7 @@ public class PlayerStamina : MonoBehaviour
 
     public void _ReduceStaminaAmount(int _amountToReduce)
     {
+        Debug.Log("Reduced");
         _currentStaminaAmount -= _amountToReduce;
         _updateStaminaUI();
     }
