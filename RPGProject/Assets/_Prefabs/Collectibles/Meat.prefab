@@ -2441,7 +2441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d32dcf9cc2a2a4294a82b431d7ed11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _staminaRecoverAmount: 5
+  _staminaRecoverAmount: 4
+  _hungerRecoverAmount: 1
+  _thirstilyRecoverAmount: 0
   _collectedSFX: {fileID: 8537011895273077231}
 --- !u!54 &2194884600316549689
 Rigidbody:

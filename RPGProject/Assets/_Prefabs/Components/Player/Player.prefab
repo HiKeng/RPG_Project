@@ -580,8 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxAmount: 10
-  _idleConsumeSpeed: 0.2
-  _MoveConsumeSpeed: 0.5
+  _idleConsumeSpeed: 0.02
+  _MoveConsumeSpeed: 0.2
   _consumeStaminaInterval: 2
   _consumeStaminaSpeedMultiplier: 0.3
   _slider: {fileID: 6825538275269258364}
@@ -597,11 +597,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa0d3359b6c2a84ead5cf8a322ebf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxAmount: 5
-  _idleConsumeSpeed: 0.2
-  _MoveConsumeSpeed: 0.5
+  _maxAmount: 10
+  _idleConsumeSpeed: 0.02
+  _MoveConsumeSpeed: 0.2
   _consumeStaminaInterval: 1
-  _consumeStaminaSpeedMultiplier: 0.3
+  _consumeStaminaSpeedMultiplier: 0.02
   _slider: {fileID: 9016579777893397323}
 --- !u!1 &2440630430564397922
 GameObject:
