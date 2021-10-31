@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class UnitLight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<Light>().enabled = !DayNight_Manager.Instance._isDay;
     }
 }
