@@ -26,7 +26,7 @@ public class FoodResource : MonoBehaviour
     [SerializeField] Slider _slider;
     #endregion
 
-    #region Methods
+    #region Private Methods
 
     void Start()
     {
@@ -46,6 +46,7 @@ public class FoodResource : MonoBehaviour
 
         _updateSliderUI();
         _consumeStaminaOnRunningOut();
+        _checkResourceExceedThanLimited();
     }
 
     float _GetCurrentConsumeSpeedCondition()
@@ -69,11 +70,6 @@ public class FoodResource : MonoBehaviour
         _currentAmount -= Time.deltaTime * _currentConsumeSpeed;
     }
 
-    void _ReplenishResource()
-    {
-        _currentAmount = _maxAmount;
-    }
-
     void _consumeStaminaOnRunningOut()
     {
         if(_currentAmount > 0) { return; }
@@ -92,6 +88,33 @@ public class FoodResource : MonoBehaviour
     void _updateSliderUI()
     {
         _slider.value = _currentAmount / _maxAmount;
+    }
+
+    void _checkResourceExceedThanLimited()
+    {
+        if(_currentAmount > _maxAmount)
+        {
+            _currentAmount = _maxAmount;
+        }
+
+        if(_currentAmount < 0)
+        {
+            _currentAmount = 0;
+        }
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    public void _ReplenishResource()
+    {
+        _currentAmount = _maxAmount;
+    }
+
+    public void _RestoreResource(float _amountToRestore)
+    {
+        _currentAmount = _amountToRestore;
     }
 
     #endregion

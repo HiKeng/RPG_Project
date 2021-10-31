@@ -392,11 +392,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47088c24e7877bb438184b2abfd8e9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxAmount: 1
+  _maxAmount: 10
   _idleConsumeSpeed: 0.2
   _MoveConsumeSpeed: 0.5
-  _consumeStaminaInterval: 0.1
-  _consumeStaminaSpeed: 1
+  _consumeStaminaInterval: 2
+  _consumeStaminaSpeedMultiplier: 0.3
   _slider: {fileID: 6825538275269258364}
 --- !u!1 &2440630430564397922
 GameObject:

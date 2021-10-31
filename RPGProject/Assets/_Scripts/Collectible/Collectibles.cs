@@ -7,8 +7,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class Collectibles : MonoBehaviour
 {
+    [Header("Parameters")]
     [SerializeField] int _staminaRecoverAmount = 1;
+    [SerializeField] int _hungerRecoverAmount = 1;
+    [SerializeField] int _thirstilyRecoverAmount = 1;
 
+    [Header("SFX")]
     [SerializeField] AudioSource _collectedSFX;
 
     private void OnCollisionEnter(Collision other)
@@ -27,6 +31,8 @@ public class Collectibles : MonoBehaviour
             if (other.gameObject.GetComponent<PlayerStamina>() != null)
             {
                 other.gameObject.GetComponent<PlayerStamina>()._RecoverStamina(_staminaRecoverAmount);
+                other.gameObject.GetComponent<PlayerHunger>()._RestoreResource(_staminaRecoverAmount);
+                other.gameObject.GetComponent<PlayerThirstily>()._RestoreResource(_staminaRecoverAmount);
             }
         }
     }
