@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerStamina))]
 public class FoodResource : MonoBehaviour
 {
     [Header("UI")]
@@ -32,6 +33,8 @@ public class FoodResource : MonoBehaviour
         {
             _currentConsumeSpeed = _GetCurrentConsumeSpeedCondition();
         }
+
+        _slider.value = _currentAmount / _maxAmount;
     }
 
     float _GetCurrentConsumeSpeedCondition()

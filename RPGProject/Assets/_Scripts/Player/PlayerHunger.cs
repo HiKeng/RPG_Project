@@ -2,17 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHunger : MonoBehaviour
+public class PlayerHunger : FoodResource
 {
-    
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }
