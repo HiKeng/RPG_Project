@@ -114,7 +114,7 @@ public class FoodResource : MonoBehaviour
 
     public void _RestoreResource(float _amountToRestore)
     {
-        _currentAmount = _amountToRestore;
+        _currentAmount += _amountToRestore;
     }
 
     #endregion

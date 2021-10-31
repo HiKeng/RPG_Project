@@ -6,11 +6,20 @@ using UnityEngine.Events;
 public class Campfire : MonoBehaviour
 {
     [Header("Events")]
-    [SerializeField] UnityEvent _onPlayerEnter;
+    [SerializeField] public UnityEvent _onPlayerEnter;
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<PlayerStamina>() != null)
+        {
+            other.GetComponent<PlayerStamina>()._ReplenishStamina();
+            _onPlayerEnter.Invoke();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<PlayerStamina>() != null)
         {
             other.GetComponent<PlayerStamina>()._ReplenishStamina();
             _onPlayerEnter.Invoke();
