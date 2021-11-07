@@ -4963,6 +4963,7 @@ GameObject:
   - component: {fileID: 7188280196858072945}
   - component: {fileID: 7188280196858072944}
   - component: {fileID: 7188280196858072947}
+  - component: {fileID: 8307820223902204303}
   m_Layer: 14
   m_Name: Spell_Fire
   m_TagString: Untagged
@@ -5015,6 +5016,19 @@ MonoBehaviour:
   _damageToDeal: 2
   _knockBackForce: 600
   _lifeTime: 2
+--- !u!114 &8307820223902204303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188280196858072946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0ce5725c755d44ba4c8de9f09b7b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayTime: 3
 --- !u!1 &9136389735828087084
 GameObject:
   m_ObjectHideFlags: 0
