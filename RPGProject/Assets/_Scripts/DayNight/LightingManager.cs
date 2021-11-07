@@ -39,6 +39,8 @@ public class LightingManager : MonoBehaviour
         {
             _UpdateLighting(_timeOfDay / 24f);
         }
+
+        _updateDayNightBool();
     }
 
     void _UpdateLighting (float _timePrecent)
@@ -66,6 +68,18 @@ public class LightingManager : MonoBehaviour
             {
                 return;
             }
+        }
+    }
+
+    void _updateDayNightBool()
+    {
+        if(_timeOfDay >= 6 && _timeOfDay < 18)
+        {
+            DayNight_Manager.Instance._isDay = true;
+        }
+        else
+        {
+            DayNight_Manager.Instance._isDay = false;
         }
     }
 
