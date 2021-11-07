@@ -11,6 +11,7 @@ public class PlayerSkillPoint : MonoBehaviour
     [SerializeField] Image _upgradeUI;
 
     [Header("Variables")]
+    [SerializeField] int _currentSkillPoint = 0;
     public int _staminaUpgrade = 0;
 
     [Header("Events")]
@@ -58,6 +59,11 @@ public class PlayerSkillPoint : MonoBehaviour
 
     public void _upgradeStamina()
     {
-        _staminaUpgrade++;
+        if(_currentSkillPoint <= 0) { return; }
+
+        _staminaUpgrade += 1;
+        _currentSkillPoint--;
+
+        Debug.Log("GEEE");
     }
 }

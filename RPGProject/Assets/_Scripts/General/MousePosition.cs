@@ -11,8 +11,12 @@ public class MousePosition : MonoBehaviour
 
     bool _isDetected = false;
 
+    [SerializeField] bool _isOpenUI = false;
+
     void Update()
     {
+        if(_isOpenUI) { return; }
+
         _castRay();
     }
 
@@ -45,5 +49,13 @@ public class MousePosition : MonoBehaviour
     public bool _GetIsDectected()
     {
         return _isDetected;
+    }
+
+    public void _SetIsOpenUI(bool _state)
+    {
+        _isOpenUI = _state;
+
+        Cursor.visible = false;
+        Cursor.visible = true;
     }
 }
