@@ -8,7 +8,6 @@ using UnityEngine.Events;
 public class UnitHealth : MonoBehaviour
 {
     public float _maxHealth = 20f;
-    
     public float _currentHealth;
 
     [Header("Events")]

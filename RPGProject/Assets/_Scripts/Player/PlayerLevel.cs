@@ -20,7 +20,6 @@ public class PlayerLevel : MonoBehaviour
     [SerializeField] UnityEvent _onGainExperience;
     [SerializeField] UnityEvent _onLevelUp;
 
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.P))
