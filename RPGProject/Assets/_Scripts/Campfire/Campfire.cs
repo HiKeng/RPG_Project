@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Campfire : MonoBehaviour
+public class Campfire : CheckPoint
 {
-    [Header("Events")]
-    [SerializeField] public UnityEvent _onPlayerEnter;
-
-    public virtual void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerStamina>() != null)
+        base.OnTriggerEnter(other);
+
+        if (other.GetComponent<PlayerStamina>() != null)
         {
             other.GetComponent<PlayerStamina>()._ReplenishStamina();
             _onPlayerEnter.Invoke();
         }
     }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -25,4 +25,5 @@ public class Campfire : MonoBehaviour
             _onPlayerEnter.Invoke();
         }
     }
+
 }
