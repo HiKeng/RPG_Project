@@ -24,7 +24,7 @@ public class PlayerLevel : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P))
         {
-            _ReceiveLevelProgress(100f);
+            _ReceiveExperienceProgress(100f);
         }
 
         _checkLevelUpProgress();
@@ -50,7 +50,7 @@ public class PlayerLevel : MonoBehaviour
         _onLevelUp.Invoke();
     }
 
-    public void _ReceiveLevelProgress(float _amountToReceive)
+    public void _ReceiveExperienceProgress(float _amountToReceive)
     {
         _currentExperienceProgress += _amountToReceive;
 

@@ -122,8 +122,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2747466736093932201}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: _GiveEXP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _rewardList:
   - {fileID: 1050380986268772928, guid: 83460aec402336541815ca18a8328305, type: 3}
+  _expToGive: 10
 --- !u!1 &2747466736511901433
 GameObject:
   m_ObjectHideFlags: 0
