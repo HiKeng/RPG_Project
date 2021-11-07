@@ -19,6 +19,5 @@ public class EnemyHealth : UnitHealth
     public void _GiveEXP()
     {
         Unit_Manager.Instance._player.GetComponent<PlayerLevel>()._ReceiveExperienceProgress(_expToGive);
-        Debug.Log("Hello");
     }
 }
