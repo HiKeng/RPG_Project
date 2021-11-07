@@ -8,11 +8,14 @@ public class PlayerSkillPoint : MonoBehaviour
 {
     [Header("References")]
     public CheckPoint _currentCheckPoint;
-    [SerializeField] Image _upgradeUI;
+    [SerializeField] UpgradeStatsManager _upgradeUI;
 
     [Header("Variables")]
-    [SerializeField] int _currentSkillPoint = 0;
+    [SerializeField] public int _currentSkillPoint = 0;
+
     public int _staminaUpgrade = 0;
+    public int _movementUpgrade = 0;
+    public int _magicDamageUpgrade = 0;
 
     [Header("Events")]
     [SerializeField] UnityEvent _onOpenUI;
@@ -73,8 +76,32 @@ public class PlayerSkillPoint : MonoBehaviour
         if(_currentSkillPoint <= 0) { return; }
 
         _staminaUpgrade += 1;
-        _currentSkillPoint--;
+        _currentSkillPoint -= 1;
+    }
 
-        Debug.Log("GEEE");
+    public void _upgradeMovement()
+    {
+        if (_currentSkillPoint <= 0) { return; }
+
+        _movementUpgrade += 1;
+        _currentSkillPoint -= 1;
+    }
+
+    public void _upgradeMagicDamage()
+    {
+        if (_currentSkillPoint <= 0) { return; }
+
+        _magicDamageUpgrade += 1;
+        _currentSkillPoint -= 1;
+    }
+
+    public string _GetSkillPointAsString()
+    {
+        return _currentSkillPoint.ToString();
+    }
+
+    public int _GetStaminaUpgrade()
+    {
+        return _staminaUpgrade;
     }
 }

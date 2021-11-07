@@ -59,6 +59,12 @@ public class PlayerLevel : MonoBehaviour
 
     public void _ReceiveSkillPoint()
     {
-        _currentSkillPoint += _skillPointPerLevel;
+        //_currentSkillPoint += _skillPointPerLevel;
+        GetComponent<PlayerSkillPoint>()._currentSkillPoint += _skillPointPerLevel;
+    }
+
+    public string _GetUpgradePointAsString()
+    {
+        return _currentSkillPoint.ToString();
     }
 }

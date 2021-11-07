@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] AudioSource _footStepSFX;
+    [SerializeField] float _upgradeMovementModifier = 0.2f;
 
     Rigidbody rigid;
 
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        _SetSpeed();
         checkButtonUP();
     }
 
@@ -49,7 +51,10 @@ public class PlayerMovement : MonoBehaviour
     public void _SetSpeed()
     {
         stopMoving();
-        moveSpeed = moveSpeedBase[0];
+        //moveSpeed = moveSpeedBase[0];
+
+        moveSpeed = moveSpeedBase[0] + 
+                    GetComponent<PlayerSkillPoint>()._movementUpgrade * _upgradeMovementModifier;
     }
 
     void moving()
@@ -136,7 +141,6 @@ public class PlayerMovement : MonoBehaviour
     {
         moveSpeed = moveSpeedBase[0];
     }
-
 
     public void stopMoving()
     {

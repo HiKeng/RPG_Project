@@ -10,6 +10,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject _attackPrefab;
     MousePosition _mousePosition;
 
+    [Header("References")]
+    [SerializeField] float _baseAttackDamge = 2f;
+    [SerializeField] float _upgradeModifier = 0.5f;
 
     [Header("Events")]
     [SerializeField] UnityEvent _onAttack;
@@ -31,7 +34,14 @@ public class PlayerAttack : MonoBehaviour
     {
         Debug.Log("Cast Spell");
 
-        Instantiate(_attackPrefab, _mousePosition._GetMousePosition(), Quaternion.identity);
+        GameObject _newAttack = Instantiate(_attackPrefab, _mousePosition._GetMousePosition(), Quaternion.identity);
+        _newAttack.GetComponent<HarmTools>()._SetDamageToDeal(_calculateMagicDamage());
+
         _onAttack.Invoke();
+    }
+
+    float _calculateMagicDamage()
+    {
+        return _baseAttackDamge + GetComponent<PlayerSkillPoint>()._magicDamageUpgrade * _upgradeModifier;
     }
 }

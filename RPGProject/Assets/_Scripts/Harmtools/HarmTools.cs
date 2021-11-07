@@ -29,4 +29,8 @@ public class HarmTools : MonoBehaviour
         _target.AddForce(_direction * _knockBackForce * -1);
     }
 
+    public virtual void _SetDamageToDeal(float _amount)
+    {
+        _damageToDeal = _amount;
+    }
 }
