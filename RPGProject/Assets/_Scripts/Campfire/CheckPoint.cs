@@ -12,26 +12,14 @@ public class CheckPoint : MonoBehaviour
     public UnityEvent _onPlayerEnter;
     public UnityEvent _onPlayerExit;
 
-    private void Update()
-    {
-        _CheckPointUIActive();
-    }
-
-    void _CheckPointUIActive()
-    {
-        if(!_isPlayerEnter) { return; }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Active checkpoint UI");
-        }
-    }
-
     public virtual void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerHealth>() != null)
         {
             _isPlayerEnter = true;
+
+            other.GetComponent<PlayerSkillPoint>()._updateCurrentCheckPoint(this);
+
             _onPlayerEnter.Invoke();
         }
     }
@@ -41,6 +29,9 @@ public class CheckPoint : MonoBehaviour
         if (other.GetComponent<PlayerHealth>() != null)
         {
             _isPlayerEnter = false;
+
+            other.GetComponent<PlayerSkillPoint>()._updateCurrentCheckPoint(null);
+
             _onPlayerExit.Invoke();
         }
     }
