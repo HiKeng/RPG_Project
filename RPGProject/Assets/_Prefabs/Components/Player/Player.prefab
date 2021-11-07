@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 3991099544366411464}
   - component: {fileID: 3239916962174999954}
   - component: {fileID: 2170740225100372411}
+  - component: {fileID: 5488808894738987375}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -603,6 +604,21 @@ MonoBehaviour:
   _consumeStaminaInterval: 1
   _consumeStaminaSpeedMultiplier: 0.02
   _slider: {fileID: 9016579777893397323}
+--- !u!114 &5488808894738987375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440630430333776803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f32f9fc64a4b4dbd80ac60583878f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentLevel: 1
+  _experienceBar: 50
+  _currentExperienceProgress: 0
 --- !u!1 &2440630430564397922
 GameObject:
   m_ObjectHideFlags: 0
