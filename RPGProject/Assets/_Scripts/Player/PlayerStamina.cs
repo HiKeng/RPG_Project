@@ -9,6 +9,7 @@ public class PlayerStamina : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] TMP_Text _staminaUI;
+    [SerializeField] Slider _slider;
 
     [Header("Parameter")]
     [SerializeField] int _baseMaxStaminaAmount = 5;
@@ -47,6 +48,13 @@ public class PlayerStamina : MonoBehaviour
         }
 
         _checkStaminaAmountLeft();
+        _updateSliderUI();
+    }
+
+
+    void _updateSliderUI()
+    {
+        _slider.value = (_currentStaminaAmount * _staminaPerPoint) / (_currentMaxStaminaAmount * _staminaPerPoint);
     }
 
     private void _updateStaminaAmount()
