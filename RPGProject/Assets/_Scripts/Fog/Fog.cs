@@ -10,5 +10,10 @@ public class Fog : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        if(other.CompareTag("PlayerMap"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

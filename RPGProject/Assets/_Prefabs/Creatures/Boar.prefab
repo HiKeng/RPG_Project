@@ -136,7 +136,7 @@ MonoBehaviour:
         m_CallState: 2
   _rewardList:
   - {fileID: 1050380986268772928, guid: 83460aec402336541815ca18a8328305, type: 3}
-  _expToGive: 10
+  _expToGive: 50
 --- !u!1 &2747466736511901433
 GameObject:
   m_ObjectHideFlags: 0
