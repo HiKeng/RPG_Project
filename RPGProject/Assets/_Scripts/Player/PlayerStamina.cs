@@ -11,7 +11,8 @@ public class PlayerStamina : MonoBehaviour
     [SerializeField] TMP_Text _staminaUI;
 
     [Header("Parameter")]
-    [SerializeField] int _maxStaminaAmount = 5;
+    [SerializeField] int _baseMaxStaminaAmount = 5;
+    [SerializeField] int _currentMaxStaminaAmount;
     int _currentStaminaAmount = 5;
 
     [SerializeField] float _staminaPerPoint = 30f;
@@ -23,6 +24,8 @@ public class PlayerStamina : MonoBehaviour
     void Start()
     {
         _ReplenishStamina();
+
+        _currentMaxStaminaAmount = _baseMaxStaminaAmount;
     }
 
     void Update()
@@ -37,9 +40,9 @@ public class PlayerStamina : MonoBehaviour
             _updateStaminaAmount();
         }
 
-       if(_currentStaminaAmount > _maxStaminaAmount)
+       if(_currentStaminaAmount > _currentMaxStaminaAmount)
         {
-            _currentStaminaAmount = _maxStaminaAmount;
+            _currentStaminaAmount = _currentMaxStaminaAmount;
             _updateStaminaUI();
         }
 
@@ -55,7 +58,7 @@ public class PlayerStamina : MonoBehaviour
 
     void _updateStaminaUI()
     {
-        _staminaUI.text = $"Stamina : {_currentStaminaAmount} / {_maxStaminaAmount}";
+        _staminaUI.text = $"Stamina : {_currentStaminaAmount} / {_currentMaxStaminaAmount}";
     }
 
     void _resetCurrentStaminaPoint()
@@ -65,7 +68,7 @@ public class PlayerStamina : MonoBehaviour
 
     public void _ReplenishStamina()
     {
-        _currentStaminaAmount = _maxStaminaAmount;
+        _currentStaminaAmount = _currentMaxStaminaAmount;
         _currentStamina = _staminaPerPoint;
         _updateStaminaUI();
     }
@@ -99,6 +102,12 @@ public class PlayerStamina : MonoBehaviour
         if(_currentStaminaAmount > 0) { return; }
 
         gameObject.SetActive(false);
+    }
+
+    public void _SetMaxStamina(int _amount)
+    {
+        _currentMaxStaminaAmount = _baseMaxStaminaAmount + _amount;
+        _updateStaminaUI();
     }
 
 }

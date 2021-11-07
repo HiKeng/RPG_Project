@@ -20,12 +20,14 @@ public class PlayerSkillPoint : MonoBehaviour
 
     void Start()
     {
-        
+        _modifyStats();
     }
 
     void Update()
     {
         _checkOpenSkillUpgradeUI();
+
+        _modifyStats();
     }
 
     void _checkOpenSkillUpgradeUI()
@@ -51,6 +53,15 @@ public class PlayerSkillPoint : MonoBehaviour
         }
     }
 
+    void _modifyStats()
+    {
+        _modifyStamina();
+    }
+
+    void _modifyStamina()
+    {
+        GetComponent<PlayerStamina>()._SetMaxStamina(_staminaUpgrade);
+    }
 
     public void _updateCurrentCheckPoint(CheckPoint _checkPoint)
     {
