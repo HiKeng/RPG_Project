@@ -1261,7 +1261,7 @@ MonoBehaviour:
   _baseMaxStaminaAmount: 11
   _currentMaxStaminaAmount: 0
   _staminaPerPoint: 7
-  _consumeSpeed: 2
+  _consumeSpeed: 1
 --- !u!114 &3197940435036905575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 10
   _idleConsumeSpeed: 0.02
-  _MoveConsumeSpeed: 0.2
+  _MoveConsumeSpeed: 0.1
   _consumeStaminaInterval: 2
   _consumeStaminaSpeedMultiplier: 0.3
   _slider: {fileID: 6825538275269258364}
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 10
   _idleConsumeSpeed: 0.02
-  _MoveConsumeSpeed: 0.2
+  _MoveConsumeSpeed: 0.1
   _consumeStaminaInterval: 1
   _consumeStaminaSpeedMultiplier: 0.02
   _slider: {fileID: 9016579777893397323}
